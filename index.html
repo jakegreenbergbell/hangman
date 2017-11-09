@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>"HANGMAN GAME"</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body onload="setUpVars()">
+<center>
+    <h1>PLAY HANGMAN</h1>
+    <button id = "level1" value = "easyWords" onclick="findWord('easyWords')">
+        <a class="waves-effect waves-teal btn-flat">Easy Level</a>
+    </button>
+    <button id = "level2" value = "mediumWords" onclick="findWord('mediumWords')">
+        <a class="waves-effect waves-teal btn-flat">Medium Level</a>
+    </button>
+    <button id = "level3" value = "hardWords" onclick="findWord('hardWords')">
+        <a class="waves-effect waves-teal btn-flat">Hard Level</a>
+    </button>
+    <h6><div id = "underscores"></div></h6>
+        <p> Letter: <select id="selectLetter">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            <option value="e">e</option>
+            <option value="f">f</option>
+            <option value="g">g</option>
+            <option value="h">h</option>
+            <option value="i">i</option>
+            <option value="j">j</option>
+            <option value="k">k</option>
+            <option value="l">l</option>
+            <option value="m">m</option>
+            <option value="n">n</option>
+            <option value="o">o</option>
+            <option value="p">p</option>
+            <option value="q">q</option>
+            <option value="r">r</option>
+            <option value="s">s</option>
+            <option value="t">t</option>
+            <option value="u">u</option>
+            <option value="v">v</option>
+            <option value="w">w</option>
+            <option value="x">x</option>
+            <option value="y">y</option>
+            <option value="26">z</option>
+    </select>
+
+
+
+    <button id = "makeGuess" onclick= "makeAGuess()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Submit Guess </button>
+
+
+
+
+</center>
+</body>
+</html>
