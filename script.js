@@ -13,7 +13,7 @@ function setUpVars() {
 }
 
 function findWord(level){
-    word;
+    word = "" ;
     var underscores = "This is the word: ";
     switch (level) {
         case "easyWords":
@@ -43,18 +43,31 @@ function findWord(level){
 function makeAGuess(){
     var letterGuess = document.getElementById("selectLetter").value;
     console.log(letterGuess);
-    letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w", +
-        "x","y","z"];
     var isItThere;
-    for(var i = 0; i < word.length i ++){
+    for(var i = 0; i < word.length; i ++){
         if(letterGuess == word[i]){
             isItThere = true;
+            popLetter(i,letterGuess);
             document.getElementById("underscores").innerHTML[i] = letterGuess;
+
             break;
         } else{
             isItThere = false;
         }
 
     }
+
+}
+
+function popLetter(location, letter){
+    var underscores = "This is the word: ";
+    for(var i = 0; i < word.length; i++){
+        if (i == location){
+            underscores += "  " + letter + "  ";
+        }else{
+            underscores += "____   ";
+        }
+    }
+    document.getElementById("underscores").innerHTML = underscores;
 
 }
