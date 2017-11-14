@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link>
     <title>"HANGMAN GAME"</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="script.js"></script>
-
+    <link rel="stylesheet" href = "style.css"/>
 </head>
 <body onload="setUpVars()">
 <center>
@@ -21,40 +21,42 @@
     <button id = "level3" value = "hardWords" onclick="findWord('hardWords')">
         <a class="waves-effect waves-teal btn-flat">Hard Level</a>
     </button>
-    <h6><div id = "underscores"></div></h6>
+    <p>This is the word: </p>
+    <p><div id = "underscores"></div></p>
         <p> Letter: <select id="selectLetter">
-            <option value="a">a</option>
-            <option value="b">b</option>
-            <option value="c">c</option>
-            <option value="d">d</option>
-            <option value="e">e</option>
-            <option value="f">f</option>
-            <option value="g">g</option>
-            <option value="h">h</option>
-            <option value="i">i</option>
-            <option value="j">j</option>
-            <option value="k">k</option>
-            <option value="l">l</option>
-            <option value="m">m</option>
-            <option value="n">n</option>
-            <option value="o">o</option>
-            <option value="p">p</option>
-            <option value="q">q</option>
-            <option value="r">r</option>
-            <option value="s">s</option>
-            <option value="t">t</option>
-            <option value="u">u</option>
-            <option value="v">v</option>
-            <option value="w">w</option>
-            <option value="x">x</option>
-            <option value="y">y</option>
-            <option value="26">z</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option>
+            <option value="J">J</option>
+            <option value="K">K</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="P">P</option>
+            <option value="Q">Q</option>
+            <option value="R">R</option>
+            <option value="S">S</option>
+            <option value="T">T</option>
+            <option value="U">U</option>
+            <option value="V">V</option>
+            <option value="W">W</option>
+            <option value="X">X</option>
+            <option value="Y">Y</option>
+            <option value="Z">Z</option>
     </select>
 
 
 
     <button id = "makeGuess" onclick= "makeAGuess()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Submit Guess </button>
+    <div id="incorrectGuesses">INCORRECT GUESSES: </div>
 
 
 
