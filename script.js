@@ -47,7 +47,7 @@ function makeAGuess() {
     if(word.includes(letterGuess) != true){
         incorrectGuesses.push(letterGuess);
         console.log(incorrectGuesses);
-        document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses + "  ";
+        document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses;
     }
     for (var i = 0; i < word.length; i++) {
         if (letterGuess == word[i]) {
