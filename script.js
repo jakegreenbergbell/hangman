@@ -47,27 +47,20 @@ function makeAGuess() {
     if(word.includes(letterGuess) != true){
         incorrectGuesses.push(letterGuess);
         console.log(incorrectGuesses);
+        var hangmanAmount = incorrectGuesses.length;
+        document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png'>";
+        if(hangmanAmount == 7){
+            document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME!";
+        }
         document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses;
     }
     for (var i = 0; i < word.length; i++) {
         if (letterGuess == word[i]) {
-            guessArray[i] = true;
-        } else {
-            guessArray[i] = false;
+            output[i] = letterGuess;
         }
-
     }
-    pushToHTML(guessArray, letterGuess);
-}
-
-function pushToHTML(arrayOfGuesses, guess){
-    for(var i = 0; i < arrayOfGuesses.length; i++){
-            if(arrayOfGuesses[i]){
-                output[i] = guess;
-            }
-    }
-    var outputFinal = output.join();
-    document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
+        var outputFinal = output.join();
+        document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
 }
 
 function removeLetter(letter){
