@@ -51,15 +51,19 @@ function makeAGuess() {
         document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png'>";
         if(hangmanAmount == 7){
             document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME!";
+            document.getElementById("loserOrWinner").style.color = "red";
         }
         document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses;
     }
     for (var i = 0; i < word.length; i++) {
         if (letterGuess == word[i]) {
-            output[i] = letterGuess;
+            output[i] = letterGuess.fontcolor("green");
         }
     }
         var outputFinal = output.join();
+    if(outputFinal.includes("_") == false){
+        document.getElementById("incorrectGuesses").innerHTML = "YOU WON THE GAME!";
+    }
         document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
 }
 
