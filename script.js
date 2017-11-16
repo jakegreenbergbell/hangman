@@ -18,19 +18,24 @@ function setUpVars() {
 }
 
 function findWord(level){
+    word = [];
+    output = [];
     var underscores = "";
+    var easyBtn = document.getElementById("level1");
+    var mediumBtn = document.getElementById("level2");
+    var hardBtn = document.getElementById("level3");
     switch (level) {
         case "easyWords":
             word = easyWords[wordPlaceInArray];
-
-
         case "mediumWords":
             word = mediumWords[wordPlaceInArray];
-
-
         case "hardWords":
-            word = hardWords[wordPlaceInArray];
+            word = easyWords[wordPlaceInArray];
     }
+    easyBtn.disabled = true;
+    mediumBtn.disabled = true;
+    hardBtn.disabled = true;
+
     for(var i = 0; i < word.length; i++) {
         output.push("_ ");
     }
@@ -48,22 +53,72 @@ function makeAGuess() {
         incorrectGuesses.push(letterGuess);
         console.log(incorrectGuesses);
         var hangmanAmount = incorrectGuesses.length;
-        document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png'>";
+        document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png' " +
+            "width='20%' height='20%'>";
+        var submitButton = document.getElementById("makeGuess");
         if(hangmanAmount == 7){
             document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME!";
+            submitButton.disabled = true;
         }
         document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses;
+
     }
     for (var i = 0; i < word.length; i++) {
         if (letterGuess == word[i]) {
-            output[i] = letterGuess;
+            output[i] = letterGuess.fontcolor("green");
         }
     }
+
         var outputFinal = output.join();
+    if (outputFinal.includes("_") == false){
+        document.getElementById("loserOrWinner").innerHTML= "YOU WON THE GAME!";
+        document.getElementById("loserOrWinner").style.color = "green";
+        submitButton.disabled = true;
+    }
         document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
 }
 
-function removeLetter(letter){
+function removeLetter(){
     var letterBox = document.getElementById("selectLetter");
     letterBox.remove(letterBox.selectedIndex);
+}
+
+function playAgain(){
+    document.getElementById("underscores").innerHTML = "";
+    document.getElementById("incorrectGuesses").innerHTML = "INCORRECT GUESSES:";
+    document.getElementById("hungMan").innerHTML = "";
+    document.getElementById("loserOrWinner").innerHTML = "";
+    var easyBtn = document.getElementById("level1");
+    var mediumBtn = document.getElementById("level2");
+    var hardBtn = document.getElementById("level3");
+    easyBtn.disabled = false;
+    mediumBtn.disabled = false;
+    hardBtn.disabled = false;
+    document.getElementById("selectLetter").innerHTML =
+        "<option value=\"A\">A</option>\n" +
+        "            <option value=\"B\">B</option>\n" +
+        "            <option value=\"C\">C</option>\n" +
+        "            <option value=\"D\">D</option>\n" +
+        "            <option value=\"E\">E</option>\n" +
+        "            <option value=\"F\">F</option>\n" +
+        "            <option value=\"G\">G</option>\n" +
+        "            <option value=\"H\">H</option>\n" +
+        "            <option value=\"I\">I</option>\n" +
+        "            <option value=\"J\">J</option>\n" +
+        "            <option value=\"K\">K</option>\n" +
+        "            <option value=\"L\">L</option>\n" +
+        "            <option value=\"M\">M</option>\n" +
+        "            <option value=\"N\">N</option>\n" +
+        "            <option value=\"O\">O</option>\n" +
+        "            <option value=\"P\">P</option>\n" +
+        "            <option value=\"Q\">Q</option>\n" +
+        "            <option value=\"R\">R</option>\n" +
+        "            <option value=\"S\">S</option>\n" +
+        "            <option value=\"T\">T</option>\n" +
+        "            <option value=\"U\">U</option>\n" +
+        "            <option value=\"V\">V</option>\n" +
+        "            <option value=\"W\">W</option>\n" +
+        "            <option value=\"X\">X</option>\n" +
+        "            <option value=\"Y\">Y</option>\n" +
+        "            <option value=\"Z\">Z</option>";
 }

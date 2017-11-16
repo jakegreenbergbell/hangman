@@ -12,14 +12,18 @@
 <body onload="setUpVars()">
 <center>
     <h1>PLAY HANGMAN</h1>
-    <button id = "level1" value = "easyWords" onclick="findWord('easyWords')">
-        <a class="waves-effect waves-teal btn-flat">Easy Level</a>
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" id = "level1"
+            value = "easyWords" onclick="findWord('easyWords')">
+        Easy Level
     </button>
-    <button id = "level2" value = "mediumWords" onclick="findWord('mediumWords')">
-        <a class="waves-effect waves-teal btn-flat">Medium Level</a>
+
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" id = "level2"
+            value = "mediumWords" onclick="findWord('mediumWords')">
+        Medium Level
     </button>
-    <button id = "level3" value = "hardWords" onclick="findWord('hardWords')">
-        <a class="waves-effect waves-teal btn-flat">Hard Level</a>
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" id = "level3"
+            value = "hardWords" onclick="findWord('hardWords')">
+        Hard Level
     </button>
     <p>THIS IS THE WORD: </p>
     <p><div id = "underscores"></div></p>
@@ -59,6 +63,8 @@
     <div id="incorrectGuesses">INCORRECT GUESSES: </div>
     <div id="hungMan"></div>
     <div id="loserOrWinner"></div>
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id = "playAgain"
+            value = "playAgain" onclick="playAgain()">TRY AGAIN?</button>
 
 
 
