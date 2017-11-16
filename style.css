@@ -1,4 +1,9 @@
 #underscores{
     font-size: xx-large;
     position: static;
+    color: red;
+}
+
+#loserOrWinner{
+    color: green;
 }
