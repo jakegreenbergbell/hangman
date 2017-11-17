@@ -30,7 +30,7 @@ function findWord(level){
         case "mediumWords":
             word = mediumWords[wordPlaceInArray];
         case "hardWords":
-            word = easyWords[wordPlaceInArray];
+            word = hardWords[wordPlaceInArray];
     }
     easyBtn.disabled = true;
     mediumBtn.disabled = true;
@@ -49,13 +49,13 @@ function makeAGuess() {
     console.log(letterGuess);
     var guessArray = [];
     removeLetter(letterGuess);
+    var submitButton = document.getElementById("makeGuess");
     if(word.includes(letterGuess) != true){
         incorrectGuesses.push(letterGuess);
         console.log(incorrectGuesses);
         var hangmanAmount = incorrectGuesses.length;
         document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png' " +
             "width='20%' height='20%'>";
-        var submitButton = document.getElementById("makeGuess");
         if(hangmanAmount == 7){
             document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME!";
             submitButton.disabled = true;
@@ -68,14 +68,14 @@ function makeAGuess() {
             output[i] = letterGuess.fontcolor("green");
         }
     }
-
         var outputFinal = output.join();
     if (outputFinal.includes("_") == false){
         document.getElementById("loserOrWinner").innerHTML= "YOU WON THE GAME!";
         document.getElementById("loserOrWinner").style.color = "green";
         submitButton.disabled = true;
     }
-        document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
+    document.getElementById("underscores").innerHTML = outputFinal.replace(/,/g, "");
+
 }
 
 function removeLetter(){
@@ -91,6 +91,8 @@ function playAgain(){
     var easyBtn = document.getElementById("level1");
     var mediumBtn = document.getElementById("level2");
     var hardBtn = document.getElementById("level3");
+    var submitButton = document.getElementById("makeGuess");
+    submitButton.disabled = false;
     easyBtn.disabled = false;
     mediumBtn.disabled = false;
     hardBtn.disabled = false;
