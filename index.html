@@ -25,8 +25,10 @@
             value = "hardWords" onclick="findWord('hardWords')">
         Hard Level
     </button>
-    <p>THIS IS THE WORD: </p>
-    <p><div id = "underscores"></div></p>
+    <p><div id="thisIsTheWord">THIS IS THE WORD:</div></p>
+    <p><div id="border">
+    <div id = "underscores"></div>
+    </div></p>
         <p> Letter: <select id="selectLetter">
             <option value="A">A</option>
             <option value="B">B</option>
@@ -58,7 +60,7 @@
 
 
 
-    <button id = "makeGuess" onclick= "makeAGuess()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    <button id = "makeGuess" onclick= "makeAGuess()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" disabled>
             Submit Guess </button>
     <div id="incorrectGuesses">INCORRECT GUESSES: </div>
     <div id="hungMan"></div>

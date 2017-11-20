@@ -1,11 +1,36 @@
+body{
+    background-color: aliceblue;
+}
+#border{
+    display: none;
+    background-color: lightgray;
+    width: 350px;
+    height: 37px;
+    padding-top: 10px;
+
+}
 #underscores{
     font-size: xx-large;
     position: static;
     color: red;
+
 }
 
+#incorrectGuesses{
+    font-style: italic;
+    font-family: "Georgia", serif;
+}
+#thisIsTheWord{
+    font-style: italic;
+    font-family: "Georgia", serif;
+}
 #loserOrWinner{
     font-size: xx-large;
     color:red;
+}
+
+h1{
+    font-style: italic;
+    font-family: "Georgia", serif;
 }
 
