@@ -82,7 +82,7 @@ function incorrectLetter(letterGuess) {
         document.getElementById("hungMan").innerHTML = "<image src = 'img/" + "hangman" + hangmanAmount + ".png' " +
             "width='20%' height='20%'>";
         if(hangmanAmount == 7){
-            document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME!";
+            document.getElementById("loserOrWinner").innerHTML = "YOU LOST THE GAME! THE WORD WAS: " + word;
             submitButton.disabled = true;
         }
         document.getElementById("incorrectGuesses").innerHTML = "INCORRECT LETTERS: " + incorrectGuesses;

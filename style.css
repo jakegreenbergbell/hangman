@@ -27,6 +27,7 @@ body{
 #loserOrWinner{
     font-size: xx-large;
     color:red;
+    line-height: 1;
 }
 
 h1{
